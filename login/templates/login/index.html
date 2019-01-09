@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}主页{% endblock %}
+{% block content %}
+    {% if request.session.is_login %}
+    <h1>你好,{{ request.session.user_name }}！欢迎回来！</h1>
+<div style=" height:150px;
+width:100%;
+position:center">
+<a href="http://127.0.0.1:8000/menuinfo/"><button style="
+        position: absolute;
+        width:300px;
+        height:100px;
+        left:50%;
+        margin-left:-150px;
+        border-radius: 5px;
+        font-family: monospace;
+	    font-size: 50px;
+	    color:white;
+	    background-color:#66B3FF;
+"><b>菜单信息</b></button></a></div>
+<div style=" height:150px;
+width:100%;
+position:center">
+<a href="http://127.0.0.1:8000/chart/"><button style="
+    position: absolute;
+        width:300px;
+        height:100px;
+        left:50%;
+        margin-left:-150px;
+        border-radius: 5px;
+        font-family: monospace;
+	    font-size: 50px;
+	    color:white;
+	    background-color:#66B3FF;
+
+
+">图表分析</button></a></div>
+<div style=" height:150px;
+width:100%;
+position:center">
+<a href="http://127.0.0.1:8000/admin"><button style="
+    position: absolute;
+        width:300px;
+        height:100px;
+        left:50%;
+        margin-left:-150px;
+        border-radius: 5px;
+        font-family: monospace;
+	    font-size: 50px;
+	    color:white;
+	    background-color:#66B3FF;
+
+
+
+">管理员</button></a></div>
+    {% else %}
+    <h1>你尚未登录，只能访问公开内容！</h1>
+
+    {% endif %}
+
+
+{% endblock %}
